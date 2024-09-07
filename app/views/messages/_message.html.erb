@@ -1,0 +1,28 @@
+  <%# <div class=chat__message>
+    <div class=chat__upper_message>
+      <div class=chat__upper_message--user_name>Tom</div>
+      <div class=chat__upper_message--date>2020/3/31(Wed) 12:43:30</div>
+    </div>
+    <div class=chat__lower_message>
+      <div class=chat__lower_message--content>おはよう</div>
+    </div>
+  </div> %>
+
+<div class="chat__message">
+  <div class="chat__upper_message">
+    <div class="chat__upper_message--user_name">
+      <!-- 投稿したユーザー名情報を出力する -->
+      <%= message.user.name %>
+    </div>
+    <div class="chat__upper_message--date">
+      <!-- 投稿した時刻を出力する -->
+      <%= message.created_at %>
+    </div>
+  </div>
+  <div class="chat__lower_message">
+    <div class="chat__lower_message--content">
+      <!-- 投稿したメッセージ内容を記述する -->
+       <%= message.content %>
+    </div>
+  </div>
+</div>
