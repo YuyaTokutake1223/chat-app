@@ -26,7 +26,7 @@
   </div>
 </div>
 
-<div class = chat__form>
+<%# <div class = chat__form>
   <div class=chat__form--input>
     <input class=chat__form--input_message type="text" placeholder="type a message">
     <label class=chat__form--input_image>
@@ -35,4 +35,15 @@
     </label>
   </div>
   <input class=chat__form--submit type="submit" value="送信">
-</div>
+</div> %>
+
+<%= form_with model: [@room, @message], html: {class: "chat__form"}, local: true do |f|%>
+  <div class="chat__form--input">
+    <%= f.text_field :content, class: 'chat__form--input_message', placeholder: 'type a message' %>
+    <label class="chat__form--input_image">
+      <span class="chat__form--input_image_file">画像</span>
+      <%= f.file_field :image, class: 'chat__form--input_image_hidden' %>
+    </label>
+  </div>
+  <%= f.submit '送信', class: '=chat__form--submit' %>
+<% end %>
